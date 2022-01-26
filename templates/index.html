@@ -1,0 +1,27 @@
+
+<center>
+    <h1>Weather Detector</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="city" ><br><br>
+            <div>
+                <button type="submit">
+                    <i>search</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</center>
+{% if data.country_code %}
+<center>
+    <div>
+        <h2>CITY: {{city}}</h2>
+        <h2>country code:{{data.country_code}}</h2>
+        <h3>co-ordinate:{{data.coordinate}}</h3>
+        <h3>temperature:{{cel}} cel.</h3>
+        <h3>pressure:{{data.pressure}}</h3>
+        <h3>humidity:{{data.humidity}}</h3>
+    </div>
+</center>
+{% endif %}
